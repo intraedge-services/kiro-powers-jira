@@ -1,0 +1,12 @@
+{
+  "name": "Sync AIDLC Tasks to Jira",
+  "version": "1.0.0",
+  "description": "Manually trigger synchronization of AI-DLC tasks to Jira issues. Maps AIDLC units to Epics, tasks to Stories, and sub-tasks to Sub-tasks.",
+  "when": {
+    "type": "userTriggered"
+  },
+  "then": {
+    "type": "askAgent",
+    "prompt": "Sync AIDLC tasks to Jira. Follow the workflow in the aidlc-jira-sync.md steering file: 1) Parse AIDLC task files from aidlc-docs/ to build the task hierarchy. 2) Resolve the target Jira project key (use JIRA_PROJECT_KEY env var or ask the user). 3) Search for existing synced issues using the aidlc-synced label. 4) For each unit, create an Epic. For each task, create a Story with the user story template applied. For each sub-task, create a Sub-task. 5) Handle duplicates by prompting the user to skip or update. 6) Apply status transitions based on AIDLC task status. 7) Present a sync summary with counts and a detailed table of all created, skipped, updated, and errored issues."
+  }
+}
