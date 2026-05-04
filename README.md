@@ -15,7 +15,7 @@ Create and manage Jira Epics, Stories, Tasks, and Bugs with standard templates. 
 
 ### 1. Install the Power
 
-Open Kiro IDE → Powers panel → **Add power from Local Path** → select the `power-jira/` directory.
+Open Kiro IDE → Powers panel → **Add power from Local Path** → select the repository root directory.
 
 ### 2. Get a Jira API Token
 
@@ -55,7 +55,6 @@ All synced issues are labeled `aidlc-synced` for tracking. Re-running the sync d
 ## Power Structure
 
 ```
-power-jira/
 ├── POWER.md                        # Metadata, onboarding, security
 ├── mcp.json                        # MCP server configuration
 ├── README.md                       # This file
