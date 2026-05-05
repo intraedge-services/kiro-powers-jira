@@ -8,7 +8,7 @@ Every Story description must contain these two sections:
 
 ```markdown
 ## Description
-[Brief context and purpose of the story — what it is and why it matters]
+[Brief context and purpose of the story, what it is and why it matters]
 
 ## Acceptance Criteria
 1. [First testable criterion]
@@ -37,7 +37,7 @@ Every Story description must contain these two sections:
 
 ### Format Options
 
-**Option A — Checklist format** (preferred for simple criteria):
+**Option A: Checklist format** (preferred for simple criteria):
 ```markdown
 ## Acceptance Criteria
 1. User can enter email and password on the login form
@@ -46,7 +46,7 @@ Every Story description must contain these two sections:
 4. Failed login displays an error message
 ```
 
-**Option B — Given/When/Then format** (preferred for behavior-driven criteria):
+**Option B: Given/When/Then format** (preferred for behavior-driven criteria):
 ```markdown
 ## Acceptance Criteria
 1. Given a registered user, When they enter valid credentials, Then they are redirected to the dashboard
@@ -57,7 +57,7 @@ Every Story description must contain these two sections:
 ### Rules
 - Include at least 1 acceptance criterion per story
 - Each criterion must be independently testable
-- Avoid vague language ("should work properly") — be specific
+- Avoid vague language ("should work properly"); be specific
 - Cover the happy path and at least one error/edge case
 
 ## Example: Well-Formed Story

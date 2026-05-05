@@ -1,15 +1,15 @@
-# Jira Cloud Integration — Kiro Power
+# Jira Cloud Integration: Kiro Power
 
 Create and manage Jira Epics, Stories, Tasks, and Bugs with standard templates. Sync AI-DLC tasks to Jira issues with a single click.
 
 ## Features
 
-- **Issue Management** — Create Epics, Stories, Tasks, Sub-tasks, and Bugs with standardized templates
-- **User Story Template** — Minimal, consistent format: Title, Description, Acceptance Criteria
-- **Jira Templates** — Pre-built templates for all issue types (Epic, Story, Task, Bug, Sub-task)
-- **AIDLC Sync** — One-click synchronization of AI-DLC task hierarchy to Jira issues
-- **Idempotent Sync** — Duplicate detection via Jira labels prevents re-creation
-- **Status Mapping** — AIDLC task status automatically maps to Jira transitions
+- **Issue Management**: Create Epics, Stories, Tasks, Sub-tasks, and Bugs with standardized templates
+- **User Story Template**: Minimal, consistent format (Title, Description, Acceptance Criteria)
+- **Jira Templates**: Pre-built templates for all issue types (Epic, Story, Task, Bug, Sub-task)
+- **AIDLC Sync**: One-click synchronization of AI-DLC task hierarchy to Jira issues
+- **Idempotent Sync**: Duplicate detection via Jira labels prevents re-creation
+- **Status Mapping**: AIDLC task status automatically maps to Jira transitions
 
 ## Quick Start
 
@@ -72,17 +72,17 @@ All synced issues are labeled `aidlc-synced` for tracking. Re-running the sync d
 ## Requirements
 
 - [Kiro IDE](https://kiro.dev/) with Powers support
-- [uv / uvx](https://docs.astral.sh/uv/getting-started/installation/) — Python package runner
+- [uv / uvx](https://docs.astral.sh/uv/getting-started/installation/): Python package runner
 - Jira Cloud instance with API token
 - Minimum Jira permissions: Browse Projects, Create Issues, Edit Issues, Transition Issues
 
 ## MCP Server
 
-This power uses [mcp-atlassian](https://github.com/sooperset/mcp-atlassian) — a community MCP server for Atlassian products (MIT license, 5.1k+ stars, 72 tools).
+This power uses [mcp-atlassian](https://github.com/sooperset/mcp-atlassian), a community MCP server for Atlassian products (MIT license, 5.1k+ stars, 72 tools).
 
 ## Security
 
-- All credentials stored in environment variables — never hardcoded
+- All credentials stored in environment variables (never hardcoded)
 - Add `.env` to your `.gitignore`
 - Rotate API tokens every 90 days
 - Use minimum required Jira permissions

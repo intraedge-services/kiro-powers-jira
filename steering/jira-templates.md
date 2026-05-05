@@ -25,7 +25,7 @@ Standard templates for all Jira issue types. Apply the appropriate template when
 - [Secondary goal]
 
 ## Scope
-[Description of what this Epic covers — features, components, or capabilities included]
+[Description of what this Epic covers, including features, components, or capabilities]
 
 ## Out of Scope
 [What is explicitly NOT included in this Epic]
@@ -48,7 +48,7 @@ Use the detailed template defined in `user-story-template.md`.
 
 **Summary format**: "[Action verb] [what] [context]"
 
-**Description**: Follow the minimal template — Description section + Acceptance Criteria section.
+**Description**: Follow the minimal template (Description section + Acceptance Criteria section).
 
 **Auto-labels**: `story`, `{project-name}`, `aidlc-synced` (if synced from AIDLC)
 
@@ -102,7 +102,7 @@ Use the detailed template defined in `user-story-template.md`.
 [What should happen]
 
 ## Actual Behavior
-[What actually happens — include error messages if applicable]
+[What actually happens, include error messages if applicable]
 
 ## Environment
 - Browser/Client: [e.g., Chrome 120, iOS 17]
@@ -115,7 +115,7 @@ Use the detailed template defined in `user-story-template.md`.
 
 **Auto-labels**: `bug`, `{project-name}`
 
-**Priority**: Mapped from severity — Critical→Highest, Major→High, Minor→Medium, Trivial→Low
+**Priority**: Mapped from severity: Critical=Highest, Major=High, Minor=Medium, Trivial=Low
 
 **Example**:
 - Summary: "Login: App crashes when password field is empty"

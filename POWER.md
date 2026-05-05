@@ -21,7 +21,7 @@ Ensure `uvx` is installed (required to run the MCP server):
 1. Go to https://id.atlassian.com/manage-profile/security/api-tokens
 2. Click "Create API token"
 3. Give it a label (e.g., "Kiro Jira Power")
-4. Copy the generated token — you will not see it again
+4. Copy the generated token (you will not see it again)
 
 ### Step 3: Set environment variables
 Set these environment variables in your shell profile or `.env` file:
@@ -37,7 +37,7 @@ export JIRA_PROJECT_KEY="PROJ"  # Optional: default project key
 The power includes a hook at `hooks/aidlc-jira-sync.kiro.hook` that adds a manual trigger to sync AI-DLC tasks to Jira. This hook will be available in the Agent Hooks section of Kiro.
 
 ### Step 5: Verify connectivity
-Ask Kiro: "Search for issues in my Jira project" — this will test the MCP connection and confirm everything is working.
+Ask Kiro: "Search for issues in my Jira project" to test the MCP connection and confirm everything is working.
 
 ## Security
 
@@ -50,10 +50,10 @@ Ask Kiro: "Search for issues in my Jira project" — this will test the MCP conn
 
 ### Minimum Required Permissions
 Your Jira Cloud user needs these project permissions:
-- **Browse Projects** — search and read issues
-- **Create Issues** — create Epics, Stories, Tasks, Sub-tasks
-- **Edit Issues** — update issue fields
-- **Transition Issues** — change issue status
+- **Browse Projects**: search and read issues
+- **Create Issues**: create Epics, Stories, Tasks, Sub-tasks
+- **Edit Issues**: update issue fields
+- **Transition Issues**: change issue status
 
 Use a dedicated service account for automation when possible. Scope permissions to specific projects rather than granting organization-wide access.
 

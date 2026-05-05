@@ -213,7 +213,7 @@ project = PROJ AND summary ~ "search text"
 | 400 Invalid Fields | NON-FATAL | Log which field failed. Report specific validation error. Continue. |
 | 400 Issue Type Not Found | NON-FATAL | Log error. Suggest: "Check your Jira project's issue type scheme." Continue. |
 | 429 Rate Limited | RETRYABLE | Wait (respect Retry-After header). Retry once. If still fails, log and continue. |
-| Connection Timeout | RETRYABLE | Retry once. If still fails, report: "Network issue — check your connection." Continue. |
+| Connection Timeout | RETRYABLE | Retry once. If still fails, report: "Network issue, check your connection." Continue. |
 | Transition Not Available | NON-FATAL | Log warning. Report available transitions. Issue created but not transitioned. |
 
 ### Error Reporting

@@ -17,8 +17,8 @@ Read the AIDLC task files to build the task hierarchy.
 ### Detect Project Structure
 1. Read `aidlc-docs/aidlc-state.md` for the project name
 2. Check if `aidlc-docs/inception/application-design/unit-of-work.md` exists:
-   - **If exists**: Multi-unit project — parse units and their tasks
-   - **If not exists**: Single-unit project — parse tasks directly
+   - **If exists**: Multi-unit project, parse units and their tasks
+   - **If not exists**: Single-unit project, parse tasks directly
 
 ### Parse Task Checkboxes
 Extract tasks from markdown files using this checkbox pattern:
@@ -73,7 +73,7 @@ If the project has no units, ask the user:
 ### Create Epics (Multi-Unit or User Chose Option A)
 For each AIDLC unit (or the single project Epic):
 1. Check if an Epic with this summary already exists (from Step 3 map)
-2. **If exists**: Prompt user — "Epic '{summary}' already exists as {ISSUE_KEY}. Skip or Update?"
+2. **If exists**: Prompt user: "Epic '{summary}' already exists as {ISSUE_KEY}. Skip or Update?"
 3. **If new**: Create Epic using `jira_create_issue`:
    - Summary: Unit name (or project name for single-unit)
    - Description: Format using Epic template (Goals + Scope from unit description)
@@ -84,7 +84,7 @@ For each AIDLC unit (or the single project Epic):
 ### Create Stories (From AIDLC Tasks)
 For each top-level AIDLC task:
 1. Check if a Story with this summary already exists (from Step 3 map)
-2. **If exists**: Prompt user — "Story '{summary}' already exists as {ISSUE_KEY}. Skip or Update?"
+2. **If exists**: Prompt user: "Story '{summary}' already exists as {ISSUE_KEY}. Skip or Update?"
    - **Skip**: Record as skipped, move to next task
    - **Update**: Update description (re-apply Story template), priority, labels via `jira_update_issue`
 3. **If new**: Create Story using `jira_create_issue`:
@@ -101,7 +101,7 @@ For each top-level AIDLC task:
 ### Create Sub-tasks (From AIDLC Sub-tasks)
 For each nested AIDLC sub-task:
 1. Check if a Sub-task with this summary already exists
-2. **If exists**: Prompt user — Skip or Update (same as Stories)
+2. **If exists**: Prompt user: Skip or Update (same as Stories)
 3. **If new**: Create Sub-task using `jira_create_issue`:
    - Summary: Sub-task title
    - Description: Format using Sub-task template
@@ -136,16 +136,16 @@ All issues are created in "To Do" status (Jira default). Then transition if need
 **Transition procedure**:
 1. After creating the issue, check the AIDLC task status
 2. If transition needed, call `jira_transition_issue` with the target status
-3. If transition fails (status name mismatch in the project's workflow), log a warning and continue — the issue is created but remains in "To Do"
+3. If transition fails (status name mismatch in the project's workflow), log a warning and continue. The issue is created but remains in "To Do"
 
 ---
 
 ## Label Generation
 
 Every synced issue gets three labels:
-1. **`aidlc-synced`** — sync tracking marker (used for duplicate detection)
-2. **Type label** — `epic`, `story`, `task`, or `subtask` (lowercase)
-3. **Project label** — AIDLC project name, sanitized:
+1. **`aidlc-synced`**: sync tracking marker (used for duplicate detection)
+2. **Type label**: `epic`, `story`, `task`, or `subtask` (lowercase)
+3. **Project label**: AIDLC project name, sanitized:
    - Convert to lowercase
    - Replace spaces with hyphens
    - Remove special characters (keep alphanumeric and hyphens)
@@ -178,7 +178,7 @@ After all tasks are processed, present the summary:
 | Created | 1.1 | PROJ-102 | Login form component |
 | Skipped | 2 | PROJ-103 | Already exists |
 | Updated | 3 | PROJ-104 | Updated description |
-| Error | 4 | — | Permission denied |
+| Error | 4 | - | Permission denied |
 ```
 
 ---

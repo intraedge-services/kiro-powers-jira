@@ -8,14 +8,14 @@ Guidelines for developing, maintaining, and extending this Jira power.
 - **name**: Use lowercase, hyphenated format (e.g., `jira`)
 - **displayName**: Human-readable name (e.g., "Jira Cloud Integration")
 - **description**: One sentence explaining what the power does
-- **keywords**: Include terms developers actually use when talking about Jira — "jira", "ticket", "issue", "epic", "story", "sprint", "backlog", "aidlc", "sync"
+- **keywords**: Include terms developers actually use when talking about Jira: "jira", "ticket", "issue", "epic", "story", "sprint", "backlog", "aidlc", "sync"
 - **author**: Your name or organization
 
 ### Onboarding Section
 - Validate all dependencies before proceeding (check `uvx` is installed)
 - Guide users step-by-step through setup (API token, env vars, hooks)
 - Verify connectivity at the end (run a test search)
-- Keep instructions concise — link to external docs for details
+- Keep instructions concise; link to external docs for details
 
 ### Steering Mappings
 - Map keywords to specific steering files
@@ -39,7 +39,7 @@ Guidelines for developing, maintaining, and extending this Jira power.
 ### Modularity
 - One concern per steering file
 - Reference other steering files by name (e.g., "Apply the template from `user-story-template.md`")
-- Avoid duplicating content across files — reference instead
+- Avoid duplicating content across files; reference instead
 
 ## MCP Configuration
 
@@ -50,7 +50,7 @@ Guidelines for developing, maintaining, and extending this Jira power.
 
 ### Server Configuration
 - Use `uvx` for running the MCP server (no local installation needed)
-- Keep the args array minimal — only include necessary flags
+- Keep the args array minimal; only include necessary flags
 - Test the configuration locally before sharing
 
 ## Hook Best Practices
