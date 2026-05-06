@@ -1,0 +1,146 @@
+# Team Roster Configuration
+# Used by AIDLC Jira Auto-Sync to assign stories to engineers based on role and area.
+# Update this file when team members change or areas are reassigned.
+
+project:
+  jira_project_key: ""  # Override with your project key (e.g., "PROJ") or set JIRA_PROJECT_KEY env var
+  default_priority:
+    epic: "High"
+    story: "Medium"
+    subtask: "Low"
+
+# Team Members
+team:
+  - name: "Engineer 1 Full Name"
+    email: "engineer1@company.com"
+    jira_account_id: ""  # Optional: Jira account ID (preferred over email for assignment)
+    role: "Senior Data Engineer"
+    jira_project_role: "Developer"
+    assigned_areas:
+      - data-pipeline
+      - ingestion
+      - transformation
+      - data-quality
+      - infrastructure
+
+  - name: "Engineer 2 Full Name"
+    email: "engineer2@company.com"
+    jira_account_id: ""
+    role: "ML/AI Engineer"
+    jira_project_role: "Developer"
+    assigned_areas:
+      - ai-agent
+      - ml-model
+      - cortex-ai
+      - vector-search
+      - streamlit
+
+# Area Definitions
+# Standard tags used to classify stories and match them to engineers.
+areas:
+  data-pipeline:
+    description: "Data ingestion, ELT/ETL, Snowpipe, Streams, Tasks"
+    examples:
+      - "Build ingestion pipeline for sales data"
+      - "Create Task DAG for transformation"
+
+  ingestion:
+    description: "Source connectivity, file formats, staging, Snowpipe"
+    examples:
+      - "Configure S3 external stage"
+      - "Set up auto-ingest with Snowpipe"
+
+  transformation:
+    description: "Data transformation, Dynamic Tables, business logic, SCD"
+    examples:
+      - "Create curated layer with SCD Type-2"
+      - "Build medallion architecture"
+
+  data-quality:
+    description: "Quality checks, Data Metric Functions, monitoring, alerting"
+    examples:
+      - "Implement data metric functions"
+      - "Build quality scorecard"
+
+  ai-agent:
+    description: "Conversational AI, Cortex Analyst, GCP/Azure agent services, agent tools"
+    examples:
+      - "Build natural language query interface"
+      - "Configure Vertex AI Agent Builder"
+
+  ml-model:
+    description: "ML training, forecasting, anomaly detection"
+    examples:
+      - "Train demand forecast model"
+      - "Build anomaly detection pipeline"
+
+  cortex-ai:
+    description: "Cortex LLM functions (sentiment, classify, summarize, complete)"
+    examples:
+      - "Apply sentiment analysis to tickets"
+      - "Generate AI resolution suggestions"
+
+  vector-search:
+    description: "Embeddings, similarity search, RAG patterns"
+    examples:
+      - "Implement ticket similarity search"
+      - "Build RAG pipeline with embeddings"
+
+  streamlit:
+    description: "Streamlit-in-Snowflake UI development"
+    examples:
+      - "Create forecast dashboard app"
+      - "Build multi-page support analytics app"
+
+  governance:
+    description: "Security, access control, PII masking, data sharing"
+    examples:
+      - "Implement row-level security"
+      - "Configure dynamic data masking"
+
+  infrastructure:
+    description: "Warehouses, resource monitors, cost optimization"
+    examples:
+      - "Configure multi-cluster warehouse strategy"
+      - "Set up resource monitors"
+
+  frontend:
+    description: "User-facing UI components and interactions"
+    examples:
+      - "Build interactive filter controls"
+      - "Create dashboard visualizations"
+
+  backend:
+    description: "API endpoints, service logic, integrations"
+    examples:
+      - "Create API for order status"
+      - "Build notification service"
+
+  testing:
+    description: "Test design, test data, validation"
+    examples:
+      - "Write integration tests for pipeline"
+      - "Create test data generators"
+
+  documentation:
+    description: "Technical docs, runbooks, architecture records"
+    examples:
+      - "Create operations runbook"
+      - "Write data dictionary"
+
+# Assignment Rules
+assignment_rules:
+  # When multiple engineers share an area, distribute via round-robin
+  distribution: "round-robin"
+
+  # If a story explicitly mentions an engineer by name, override area matching
+  allow_name_override: true
+
+  # Epics are never assigned (organizational containers only)
+  assign_epics: false
+
+  # Sub-tasks inherit parent Story assignee unless overridden
+  subtask_inherit_parent: true
+
+  # If no engineer matches a story's area, leave unassigned
+  unassigned_action: "flag_in_summary"

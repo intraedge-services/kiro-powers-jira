@@ -5,6 +5,7 @@ aidlc-docs/
 .env
 .env.local
 .env.*.local
+.envrc
 
 # OS files
 .DS_Store
